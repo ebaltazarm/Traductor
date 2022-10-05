@@ -1,0 +1,259 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Umg\\Traductor\\Traductor\\Traductor.iOS\\Traductor.iOS.csproj": {}
+  },
+  "projects": {
+    "C:\\Umg\\Traductor\\Traductor\\Traductor.iOS\\Traductor.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Umg\\Traductor\\Traductor\\Traductor.iOS\\Traductor.iOS.csproj",
+        "projectName": "Traductor.iOS.csproj",
+        "projectPath": "C:\\Umg\\Traductor\\Traductor\\Traductor.iOS\\Traductor.iOS.csproj",
+        "packagesPath": "C:\\Users\\ebalt\\.nuget\\packages\\",
+        "outputPath": "C:\\Umg\\Traductor\\Traductor\\Traductor.iOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\ebalt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "C:\\Umg\\Traductor\\Traductor\\Traductor\\Traductor.csproj": {
+                "projectPath": "C:\\Umg\\Traductor\\Traductor\\Traductor\\Traductor.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2-beta2, )"
+            },
+            "Plugin.MediaManager.Forms": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.Expander": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.GridCommon": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfComboBox": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfDataForm": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfNavigationDrawer": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfNavigationDrawer.IOS": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfRangeSlider": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2196, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Umg\\Traductor\\Traductor\\Traductor\\Traductor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Umg\\Traductor\\Traductor\\Traductor\\Traductor.csproj",
+        "projectName": "Traductor",
+        "projectPath": "C:\\Umg\\Traductor\\Traductor\\Traductor\\Traductor.csproj",
+        "packagesPath": "C:\\Users\\ebalt\\.nuget\\packages\\",
+        "outputPath": "C:\\Umg\\Traductor\\Traductor\\Traductor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ebalt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Google.Cloud.Speech.V1": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Plugin.MediaManager.Forms": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.SfTextInputLayout.WPF": {
+              "target": "Package",
+              "version": "[20.2.0.36, )"
+            },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.Expander": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.GridCommon": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfComboBox": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfDataForm": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfNavigationDrawer": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Syncfusion.Xamarin.SfRangeSlider": {
+              "target": "Package",
+              "version": "[20.2.0.50, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2196, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

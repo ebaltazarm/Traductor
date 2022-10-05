@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:comboBox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             x:Class="Traductor.Views.Login">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="White">
+            <ScrollView BackgroundColor="White" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Spacing="10" Padding="20" VerticalOptions="CenterAndExpand">
+                    <Label Text="Región"/>
+                    <StackLayout>
+                        <comboBox:SfComboBox x:Name="RegionId" >
+                        </comboBox:SfComboBox>
+                    </StackLayout>
+                    
+                    <StackLayout Spacing="0">
+                        <Label Text="Email"/>
+                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
+                                                       ContainerType="Outlined"
+                                                       HasError="False"
+                                                       x:Name="EmailContainer">
+                            <Entry Placeholder="Email" x:Name="Email" Keyboard="Email" TextColor="black" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0">
+                        <Label Text="Nombres" />
+                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
+                                                       ContainerType="Outlined"
+                                                       HasError="False"
+                                                       x:Name="NombresContainer">
+                            <Entry Placeholder="Nombres" x:Name="Nombres" Keyboard="Text" TextColor="black" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0">
+                        <Label Text="Apellidos"/>
+                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
+                                                       ContainerType="Outlined"
+                                                       HasError="False"
+                                                       x:Name="ApellidosContainer">
+                            <Entry Placeholder="Apellidos" x:Name="Apellidos" Keyboard="Text" TextColor="black" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0">
+                        <Label Text="Teléfono"/>
+                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
+                                                       ContainerType="Outlined"
+                                                       HasError="False"
+                                                       x:Name="TelefonoContainer">
+                            <Entry Placeholder="Teléfono" x:Name="Telefono" Keyboard="Telephone" TextColor="black" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                    
+                    <Grid
+                        RowSpacing="0"
+                        ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button VerticalOptions="CenterAndExpand"
+                                CornerRadius="10"
+                                x:Name="btnlogin" Text="Ingresar"
+                                Clicked="ButtonLogin"
+                                BorderWidth="1">
+
+                        </Button>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+
+            <!--#endregion-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
