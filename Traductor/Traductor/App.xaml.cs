@@ -39,7 +39,7 @@ namespace Traductor
             }
             catch (Exception e)
             {
-                // ignored
+                //ignore
             }
         }
 

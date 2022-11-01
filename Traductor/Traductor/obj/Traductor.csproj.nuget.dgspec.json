@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Plugin.CrossSpeechToText": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
             "Plugin.MediaManager.Forms": {
               "target": "Package",
               "version": "[1.1.1, )"

@@ -20,11 +20,9 @@ namespace Traductor.Servicios
 {
 	public class Http
 	{
-		//GPI-19
-		//  private static string url_base_prod = "http://192.168.0.22:3000/";
-		private static string     url_base_prod = "http://192.168.156.30:3000/";
-		private static string     url_base_test = "http://192.168.156.30:3000/";
-		private static string     url_contenido = "http://192.168.156.30:3000";
+		private static string     url_base_prod = "http://traductor-senias.me/";
+		private static string     url_base_test = "http://traductor-senias.me/";
+		private static string     url_contenido = "http://traductor-senias.me";
 		private static string     url_base      = UrlProduccion();
 		private static string     UriBase       = url_base + "Login";
 		private static HttpClient client        = new HttpClient();
@@ -169,8 +167,8 @@ namespace Traductor.Servicios
 			try
 			{
 				var builder = new UriBuilder(url_base + _uri);
-				builder.Query = objetJsonQuery != null ? ConvertDataQuerry(objetJsonQuery) : ""; //"?desde=&hasta=&tipoAhorroSearch=&asociadoId=26";
-				//client.DefaultRequestHeaders.Clear();
+				builder.Query = objetJsonQuery != null ? ConvertDataQuerry(objetJsonQuery) : "";
+				
 				client.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
 				var response = client.GetAsync(builder.Uri).Result;

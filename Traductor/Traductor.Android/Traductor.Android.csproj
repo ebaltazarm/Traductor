@@ -84,6 +84,8 @@
     <None Include="Resources\drawable\microphone-solid.svg" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\comentario.png" />
+    <AndroidResource Include="Resources\drawable\info.png" />
     <AndroidResource Include="Resources\drawable\microphone.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />

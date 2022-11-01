@@ -7,6 +7,7 @@ using Google.Cloud.Speech.V1;
 using MediaManager;
 using MediaManager.Playback;
 using Newtonsoft.Json;
+using Plugin.CrossSpeechToText.Stt;
 using Traductor.Models;
 using Traductor.Models.Usuario;
 using Traductor.ViewModels;
@@ -21,12 +22,24 @@ namespace Traductor.Views
 	public partial class Principal : ContentPage
 	{
 		private UsuarioModel _usuario = null;
+		private bool         _speak   = false;
 		
 		public Principal()
 		{
+			Application.Current.PageAppearing += OnPageAppearing;
 			InitializeComponent();
-			this.BindingContext = new PrincipalViewModel();
-			_usuario = JsonConvert.DeserializeObject<UsuarioModel>(Preferences.Get("Usuario", "{}"));
+			this.BindingContext               =  new PrincipalViewModel();
+			_usuario                          =  JsonConvert.DeserializeObject<UsuarioModel>(Preferences.Get("Usuario", "{}"));
+		}
+		
+		private async void OnPageAppearing(object sender, Page e)
+		{
+			if (e is Principal && !this._speak)
+			{
+				this.videoView.IsVisible = false;
+				this.oracion.Text               = "";
+				//this.videoView.VideoPlaceholder = ImageSource.FromResource(obtnerRuta("/Images/Traductor/9k6CfbovDNsRNR4QKw0J.mp4"));
+			}
 		}
 
 		private async void Traducir(object sender, EventArgs e)
@@ -61,7 +74,13 @@ namespace Traductor.Views
 				await DisplayAlert("Alerta", "No se ha encontrado información", "Aceptar");
 			}
 			
+			this.videoView.IsVisible = true;
 			await CrossMediaManager.Current.Play(palabras);
+		}
+
+		public async void VideoInicial(string video)
+		{
+			await CrossMediaManager.Current.Play(video);
 		}
 		
 		public string obtnerRuta(string ruta)
@@ -69,39 +88,18 @@ namespace Traductor.Views
 			return Servicios.Http.UrlContenido() + ruta;
 		}
 
-		private void ReconocimientoDeVoz(object sender, EventArgs e)
+		private async void ReconocimientoDeVoz(object sender, EventArgs e)
 		{
 			try
 			{
-				var speech = SpeechClient.Create();
-				var config = new RecognitionConfig
-				             {
-					             Encoding        = RecognitionConfig.Types.AudioEncoding.Flac,
-					             SampleRateHertz = 16000,
-					             LanguageCode    = LanguageCodes.Spanish.Guatemala
-				             };
-				var audio = RecognitionAudio.FromStorageUri("gs://cloud-samples-tests/speech/brooklyn.flac");         
-
-				var response = speech.Recognize(config, audio);
-
-				var resultado = "";
-
-				foreach (var result in response.Results)
-				{
-					foreach (var alternative in result.Alternatives)
-					{
-						resultado += alternative.Transcript;
-					}
-				}
-
-				if (resultado == null)
-				{
-				
-				}
+				this._speak = true;
+				var resultado = await CrossSpeechToText.StartVoiceInput("Hable");
+				this.oracion.Text = resultado;
+				this._speak       = false;
 			}
 			catch (Exception exception)
 			{
-				
+				//ignore
 			}
 		}
 	}

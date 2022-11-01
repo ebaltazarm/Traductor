@@ -17,16 +17,23 @@ namespace Traductor.Views
 		public Login()
 		{
 			InitializeComponent();
-			var response = Traductor.Servicios.Http.GetHttpData("Palabras/ObtenerRegiones");
-
-			var data  = JsonConvert.DeserializeObject<Response>(response);
-			var items = JsonConvert.DeserializeObject<List<RegionModel>>(data.data.ToString());
-
-			this.RegionId.DataSource        = items;
-			this.RegionId.DisplayMemberPath = "Nombre";
-			if (items.Count > 0)
+			try
 			{
-				this.RegionId.SelectedIndex = 0;
+				var response = Http.GetHttpData("Palabras/ObtenerRegiones");
+
+				var data  = JsonConvert.DeserializeObject<Response>(response);
+				var items = JsonConvert.DeserializeObject<List<RegionModel>>(data.data.ToString());
+
+				this.RegionId.DataSource        = items;
+				this.RegionId.DisplayMemberPath = "Nombre";
+				if (items.Count > 0)
+				{
+					this.RegionId.SelectedIndex = 0;
+				}
+			}
+			catch (Exception e)
+			{
+				//
 			}
 		}
 
@@ -55,7 +62,7 @@ namespace Traductor.Views
 				}
 				else
 				{
-					
+					await DisplayAlert("Error", data.errors.Error , "Aceptar");
 				}
 			}
 			catch (Exception exception)

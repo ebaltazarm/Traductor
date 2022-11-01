@@ -81,8 +81,14 @@
     <TabBar>
         <ShellContent Route="Login" ContentTemplate="{DataTemplate local:Login}" />
     </TabBar>
-    <FlyoutItem Title="Principal" Icon="icon_about.png">
+    <FlyoutItem Title="Principal" Icon="microphone.png">
         <ShellContent Route="Principal" ContentTemplate="{DataTemplate local:Principal}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Comentarios" Icon="comentario.png">
+        <ShellContent Route="Comentarios" ContentTemplate="{DataTemplate local:Comentarios}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Datos de usuario" Icon="info.png">
+        <ShellContent Route="CambiarInformacion" ContentTemplate="{DataTemplate local:CambiarInformacion}" />
     </FlyoutItem>
     <!--<FlyoutItem Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />

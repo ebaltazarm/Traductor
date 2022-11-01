@@ -7,74 +7,88 @@
              x:Class="Traductor.Views.Login">
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="White">
-            <ScrollView BackgroundColor="White" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <StackLayout Spacing="10" Padding="20" VerticalOptions="CenterAndExpand">
-                    <Label Text="Región"/>
-                    <StackLayout>
-                        <comboBox:SfComboBox x:Name="RegionId" >
-                        </comboBox:SfComboBox>
-                    </StackLayout>
-                    
-                    <StackLayout Spacing="0">
-                        <Label Text="Email"/>
-                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
-                                                       ContainerType="Outlined"
-                                                       HasError="False"
-                                                       x:Name="EmailContainer">
-                            <Entry Placeholder="Email" x:Name="Email" Keyboard="Email" TextColor="black" />
-                        </inputLayout:SfTextInputLayout>
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <Label Text="Nombres" />
-                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
-                                                       ContainerType="Outlined"
-                                                       HasError="False"
-                                                       x:Name="NombresContainer">
-                            <Entry Placeholder="Nombres" x:Name="Nombres" Keyboard="Text" TextColor="black" />
-                        </inputLayout:SfTextInputLayout>
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <Label Text="Apellidos"/>
-                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
-                                                       ContainerType="Outlined"
-                                                       HasError="False"
-                                                       x:Name="ApellidosContainer">
-                            <Entry Placeholder="Apellidos" x:Name="Apellidos" Keyboard="Text" TextColor="black" />
-                        </inputLayout:SfTextInputLayout>
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <Label Text="Teléfono"/>
-                        <inputLayout:SfTextInputLayout Margin="0" Padding="0"
-                                                       ContainerType="Outlined"
-                                                       HasError="False"
-                                                       x:Name="TelefonoContainer">
-                            <Entry Placeholder="Teléfono" x:Name="Telefono" Keyboard="Telephone" TextColor="black" />
-                        </inputLayout:SfTextInputLayout>
-                    </StackLayout>
-                    
-                    <Grid
-                        RowSpacing="0"
-                        ColumnSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-
-                        <Button VerticalOptions="CenterAndExpand"
-                                CornerRadius="10"
-                                x:Name="btnlogin" Text="Ingresar"
-                                Clicked="ButtonLogin"
-                                BorderWidth="1">
-
-                        </Button>
-                    </Grid>
-                </StackLayout>
-            </ScrollView>
-
-            <!--#endregion-->
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="15">
+                <comboBox:SfComboBox x:Name="RegionId" ShowClearButton="False">
+                </comboBox:SfComboBox>
+                
+                <!--Email-->
+                <inputLayout:SfTextInputLayout Hint="Email"
+                                               x:Name="EmailField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <inputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="inputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Email},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Email es requerido" />
+                        </DataTrigger>
+                    </inputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Email" Keyboard="Email" />
+                </inputLayout:SfTextInputLayout>
+                <!--EndEmail-->
+                
+                <!--Nombres-->
+                <inputLayout:SfTextInputLayout Hint="Nombres"
+                                               x:Name="NombresField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <inputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="inputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Nombres},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Nombres es requerido" />
+                        </DataTrigger>
+                    </inputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Nombres" Keyboard="Text"/>
+                </inputLayout:SfTextInputLayout>
+                <!--EndNombres-->
+                
+                <!--Apellidos-->
+                <inputLayout:SfTextInputLayout Hint="Apellidos"
+                                               x:Name="ApellidosField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <inputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="inputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Apellidos},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Apellidos es requerido" />
+                        </DataTrigger>
+                    </inputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Apellidos" Keyboard="Text"/>
+                </inputLayout:SfTextInputLayout>
+                <!--EndApellidos-->
+                
+                <!--Telefono-->
+                <inputLayout:SfTextInputLayout Hint="Teléfono"
+                                               x:Name="TelefonoField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <inputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="inputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Telefono},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Teléfono es requerido" />
+                        </DataTrigger>
+                    </inputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Telefono" Keyboard="Telephone"/>
+                </inputLayout:SfTextInputLayout>
+                <!--EndTelefono-->
+                
+                <Button HorizontalOptions="CenterAndExpand"
+                        CornerRadius="10" WidthRequest="100"
+                        x:Name="btnGuardar" Text="Ingresar"
+                        Clicked="ButtonLogin"
+                        BorderWidth="1"/>
+            </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

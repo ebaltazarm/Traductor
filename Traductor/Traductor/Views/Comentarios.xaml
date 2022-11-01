@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
+             x:Class="Traductor.Views.Comentarios">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="White">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="15">
+                <inputLayout:SfTextInputLayout Hint="Comentario"
+                                               x:Name="MensajeField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <inputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="inputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Mensaje},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Comentario es requerido" />
+                        </DataTrigger>
+                    </inputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Mensaje" />
+                </inputLayout:SfTextInputLayout>
+
+                <Button HorizontalOptions="CenterAndExpand"
+                        CornerRadius="10" WidthRequest="100"
+                        x:Name="btnGuardar" Text="Guardar"
+                        Clicked="Guardar"
+                        BorderWidth="1"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -8,6 +8,7 @@ ExoPlayer.UI.dll
 FormsViewGroup.dll
 MediaManager.dll
 MediaManager.Forms.dll
+Plugin.CrossSpeechToText.Android.dll
 Syncfusion.Buttons.XForms.Android.dll
 Syncfusion.Core.XForms.Android.dll
 Syncfusion.Expander.XForms.Android.dll

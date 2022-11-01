@@ -37,7 +37,7 @@
                             Clicked="Traducir">
                     </Button>
                 </Grid>
-                <forms:VideoView VerticalOptions="FillAndExpand" AutoPlay="True" />
+                <forms:VideoView x:Name="videoView" VerticalOptions="FillAndExpand" AutoPlay="True"/>
                 <!--<forms:VideoView Width="360" Height="202"/>-->
             </StackLayout>
     </ContentPage.Content>

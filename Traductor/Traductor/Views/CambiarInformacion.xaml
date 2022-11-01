@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:comboBox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             x:Class="Traductor.Views.CambiarInformacion"
+             Title="Datos de usuario">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="White">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="15">
+                <comboBox:SfComboBox x:Name="RegionId" ShowClearButton="False">
+                </comboBox:SfComboBox>
+                
+                <!--~1~Email@1@
+                <textInputLayout:SfTextInputLayout Hint="Email"
+                                               x:Name="EmailField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <textInputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="textInputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Email},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Email es requerido" />
+                        </DataTrigger>
+                    </textInputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Email" Keyboard="Email" />
+                </textInputLayout:SfTextInputLayout>
+                ~1~EndEmail@1@-->
+                
+                <!--Nombres-->
+                <textInputLayout:SfTextInputLayout Hint="Nombres"
+                                               x:Name="NombresField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <textInputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="textInputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Nombres},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Nombres es requerido" />
+                        </DataTrigger>
+                    </textInputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Nombres" Keyboard="Text"/>
+                </textInputLayout:SfTextInputLayout>
+                <!--EndNombres-->
+                
+                <!--Apellidos-->
+                <textInputLayout:SfTextInputLayout Hint="Apellidos"
+                                               x:Name="ApellidosField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <textInputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="textInputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Apellidos},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Apellidos es requerido" />
+                        </DataTrigger>
+                    </textInputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Apellidos" Keyboard="Text"/>
+                </textInputLayout:SfTextInputLayout>
+                <!--EndApellidos-->
+                
+                <!--Telefono-->
+                <textInputLayout:SfTextInputLayout Hint="Teléfono"
+                                               x:Name="TelefonoField"
+                                               ErrorColor="Red"
+                                               FocusedColor="Blue"
+                                               ContainerType="Outlined">
+                    <textInputLayout:SfTextInputLayout.Triggers>
+                        <DataTrigger TargetType="textInputLayout:SfTextInputLayout"
+                                     Binding="{Binding Source={x:Reference Telefono},Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="HasError" Value="True" />
+                            <Setter Property="ErrorText" Value="Teléfono es requerido" />
+                        </DataTrigger>
+                    </textInputLayout:SfTextInputLayout.Triggers>
+                    <Entry x:Name="Telefono" Keyboard="Telephone"/>
+                </textInputLayout:SfTextInputLayout>
+                <!--EndTelefono-->
+                
+                <Button HorizontalOptions="CenterAndExpand"
+                        CornerRadius="10" WidthRequest="100"
+                        x:Name="btnGuardar" Text="Guardar"
+                        Clicked="Guardar"
+                        BorderWidth="1"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
